@@ -1,0 +1,535 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../font/inter/Inter-VariableFont_slnt\wght.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+button,
+input[type="text"],
+input[type="password"],
+input[type="checkbox"] {
+  border: 1px solid #000000;
+}
+
+.login-topo img {
+  content: url("../imagem/Logo.png");
+}
+
+.principal {
+  display: flex;
+  height: 100vh;
+}
+
+.banner {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1)
+    ),
+    url(../imagem/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.login-principal {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone {
+  width: 48px;
+  height: 48px;
+  margin-top: 60px;
+  margin-left: 40px;
+  transition: filter 0.8s step-start;
+}
+
+.icone:hover {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(97%) saturate(4342%)
+    hue-rotate(185deg) brightness(94%) contrast(105%);
+}
+
+.logo-rede {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.8s step-start;
+}
+
+.logo-rede:hover img {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(97%) saturate(4342%)
+    hue-rotate(185deg) brightness(94%) contrast(105%) hue-rotate(0deg);
+}
+
+.carrossel {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 316px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.curso {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0761e2;
+  border-radius: 20px;
+  width: 78px;
+  height: 32px;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  margin: 0;
+}
+
+.titles {
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33.6px;
+  margin: 0;
+}
+
+.subtitles {
+  color: #909090;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0;
+}
+
+.controle {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.abas {
+  gap: 16px;
+}
+
+.setas {
+  display: flex;
+  gap: 24px;
+}
+
+.login {
+  width: 92%;
+  height: 95%;
+}
+
+.login-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 96px;
+}
+
+.login-topo button {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25.2px;
+  color: #0761e2;
+  width: 144px;
+  height: 48px;
+  border-radius: 8px;
+  gap: 12px;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+
+.login-topo button:hover {
+  color: #3281ee;
+}
+
+.boas-vindas {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 16px;
+  margin: 0;
+}
+
+.boas-vindas-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44.8px;
+  color: #0e0e0e;
+  margin: 0;
+}
+
+.boas-vindas-subtitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25.2px;
+  margin: 0;
+  color: #585858;
+}
+
+.redes {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 96px;
+  gap: 16px;
+}
+
+.redes button {
+  width: 137px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #151515;
+  background-color: #ffffff;
+}
+
+.redes button:hover {
+  border: 1px solid #3281ee;
+}
+
+.separador {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 16px;
+}
+
+.separador-risco {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.separado-ou {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25.2px;
+  color: #585858;
+}
+
+.entradas {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 16px;
+}
+
+.entradas label {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #0e0e0e;
+  margin-bottom: 0;
+}
+
+.entradas input {
+  width: 90%;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #6a6a6a;
+  margin: 0;
+}
+
+.input-com-icone {
+  position: relative;
+}
+
+.input-com-icone input {
+  padding-left: 50px;
+}
+
+.input-com-icone input:hover {
+  padding-left: 50px;
+  border: 1px solid #06b8ef;
+  cursor: pointer;
+}
+
+.icone-usuario {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: auto;
+}
+
+.manter-conectado {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manter-conectado input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: 2px solid #6a6a6a;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.manter-conectado input[type="checkbox"]:checked {
+  background-color: #0761e2;
+  border-color: #0761e2;
+}
+
+.manter-conectado input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 5px;
+  border: solid white;
+  border-width: 0 0 2px 2px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.manter-conectado input[type="checkbox"]:checked:hover {
+  background-color: #06b8ef;
+  border-color: #06b8ef;
+}
+
+.captcha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 24px 0 24px;
+  margin-top: 20px;
+}
+
+.captcha-atributos {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 76px;
+  border: 1px solid #e0e0e0;
+  justify-content: space-between;
+}
+
+.captcha-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#captcha-checkbox {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+}
+
+.captcha-atributos label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #555555;
+}
+
+.captcha-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.captcha-privacy {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #555555;
+  align-items: center;
+  margin: 0;
+}
+
+.botao-entrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.botao-entrar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #0761e2;
+  color: #ffffff;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 22.4px;
+  transition: background-color 0.5s ease;
+}
+
+.botao-entrar button:hover {
+  background-color: #06b8ef;
+}
+
+.recuperar-senha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.esqueceu {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #585858;
+}
+
+.recuperar {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #0761e2;
+}
+
+.popup-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1000;
+}
+
+.popup-message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+@media only screen and (max-width: 768px) {
+  .principal {
+    flex-direction: column;
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .login-principal {
+    width: 100%;
+  }
+
+  .captcha {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  button,
+  input[type="text"],
+  input[type="password"],
+  input[type="checkbox"] {
+    border: 1px solid #ffffff;
+  }
+
+  .login-topo img {
+    content: url("../imagem/Logo-dark.png");
+  }
+
+  .boas-vindas-title {
+    color: #ffffff;
+  }
+
+  button.logo-rede {
+    border: 1px solid #ffffff;
+    background-color: #000000;
+  }
+
+  button.logo-rede img {
+    filter: brightness(0) invert(1);
+  }
+
+  .separador-risco {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .entradas label {
+    color: #ededed;
+  }
+
+  .entradas input {
+    background-color: #000000;
+    color: #5c5c5c;
+    border: 1px solid #5c5c5c;
+  }
+
+  .recuperar {
+    color: #ededed;
+  }
+}

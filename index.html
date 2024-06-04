@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Login Toolzz</title>
+  </head>
+  <body>
+    <div class="principal">
+      <div class="banner">
+        <img src="./imagem/icon-button-light.svg" alt="Ícone" class="icone" />
+        <div class="carrossel">
+          <div class="curso">
+            <p class="tag">Cursos</p>
+            <h3 class="titles">Plataforma de cursos completa</h3>
+            <h4 class="subtitles">
+              Lorem ipsum nisl etiam himenaeos ligula augue vehicula gravida
+              tincidunt, etiam magna sapien gravida sodales sed vel pulvinar
+              suspendisse, morbi mi proin urna ornare posuere donec aptent. orci
+              vivamus primis fusce lacinia libero nostra aliquam vestibulum
+            </h4>
+          </div>
+          <div class="controle">
+            <div class="abas">
+              <img src="./imagem/Rectangle 34.png" alt="ativo" />
+              <img src="./imagem/Rectangle 35.png" alt="inativo" />
+              <img src="./imagem/Rectangle 36.png" alt="inativo" />
+            </div>
+            <div class="setas">
+              <img src="./imagem/seta-inativa.png" alt="inativa" />
+              <img src="./imagem/seta-ativa.png" alt="ativa" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="login-principal">
+        <div class="login">
+          <div class="login-topo">
+            <img src="./imagem/Logo.png" alt="logo" />
+            <button>Criar conta</button>
+          </div>
+          <div class="boas-vindas">
+            <h2 class="boas-vindas-title">Boas-vindas!</h2>
+            <h5 class="boas-vindas-subtitle">
+              Entre utilizando uma das opções abaixo
+            </h5>
+          </div>
+          <div class="redes">
+            <button class="logo-rede">
+              <img src="./imagem/Group 11.svg" alt="tt" />
+            </button>
+            <button class="logo-rede">
+              <img src="./imagem/facebook.svg" alt="facebook" />
+            </button>
+            <button class="logo-rede">
+              <img src="./imagem/apple.svg" alt="apple" />
+            </button>
+            <button class="logo-rede">
+              <img src="./imagem/twitter.svg" alt="twitter" />
+            </button>
+          </div>
+          <div class="separador">
+            <div class="separador-risco"></div>
+            <div class="separado-ou">ou</div>
+            <div class="separador-risco"></div>
+          </div>
+          <div class="entradas">
+            <div class="entradas-conjunto">
+              <label for="usuario">Usuário</label>
+              <div class="input-com-icone">
+                <input type="text" name="usuario" id="usuario" />
+                <img
+                  src="./imagem/user.svg"
+                  alt="Ícone de Usuário"
+                  class="icone-usuario"
+                />
+              </div>
+            </div>
+            <div class="entradas-conjunto">
+              <label for="senha">Senha</label>
+              <div class="input-com-icone">
+                <input type="password" name="senha" id="senha" />
+                <img
+                  src="./imagem/senha.svg"
+                  alt="Ícone de Usuário"
+                  class="icone-usuario"
+                />
+              </div>
+            </div>
+            <div class="manter-conectado">
+              <input type="checkbox" id="manter-conectado-checkbox" />
+              <label for="manter-conectado-checkbox">Manter conectado</label>
+            </div>
+          </div>
+          <div class="captcha">
+            <div class="captcha-atributos">
+              <div class="captcha-left">
+                <input type="checkbox" id="captcha-checkbox" />
+                <label for="captcha-checkbox">I am human</label>
+              </div>
+              <div class="captcha-right">
+                <img src="./imagem/captcha.png" alt="captcha" />
+                <h5 class="captcha-privacy">Privacy - Terms</h5>
+              </div>
+            </div>
+          </div>
+          <div class="botao-entrar">
+            <button id="btnEntrar">
+              <img src="./imagem/plus.svg" alt="entrar" />
+              Entrar
+            </button>
+          </div>
+          <div id="mensagem"></div>
+          <div class="recuperar-senha">
+            <p class="esqueceu">Esqueceu sua senha?</p>
+            <p class="recuperar">Recuperar senha</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="popupMessage" class="popup-message"></div>
+
+    <script>
+      document
+        .getElementById("btnEntrar")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+
+          var usuario = document.getElementById("usuario").value;
+          var senha = document.getElementById("senha").value;
+
+          fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ usuario: usuario, senha: senha }),
+          })
+            .then(function (response) {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error("Erro ao fazer login: " + response.statusText);
+              }
+            })
+            .then(function (data) {
+              showPopup("Você se conectou. Seja Bem Vindo!", "success");
+              console.log("Sucesso: " + data.mensagem);
+            })
+            .catch(function (error) {
+              showPopup(
+                "O usuário ou a senha estão incorretos. Por favor, verifique.",
+                "error"
+              );
+              console.error("Erro ao fazer login: " + error.message);
+            });
+        });
+
+      function showPopup(message, type) {
+        var popup = document.getElementById("popupMessage");
+        popup.textContent = message;
+        popup.classList.add(type);
+        popup.style.display = "block";
+        setTimeout(function () {
+          popup.style.display = "none";
+          popup.classList.remove(type);
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
